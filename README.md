@@ -11,6 +11,7 @@ A game.
 ## How does the game work ?
 
 The game displays words , that you need to spell , but every time you get one right, the orientation of keys on the keyboard changes.
+You have to get max number of words right while the count down times counts from 30.
 
 ## Issues ?
 
