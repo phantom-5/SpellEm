@@ -1,0 +1,494 @@
+<html>
+<head>
+<title>MainActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #606366; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(204,120,50); }
+.s1 { color: rgb(169,183,198); }
+.s2 { color: rgb(104,151,187); }
+.s3 { color: rgb(106,135,89); }
+.s4 { color: rgb(128,128,128); }
+</style>
+</head>
+<BODY BGCOLOR="#2b2b2b">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+MainActivity.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">package </span><span class="s1">com.example.rudra.spellem</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s0">import </span><span class="s1">android.graphics.drawable.Drawable</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.os.CountDownTimer</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.support.constraint.ConstraintLayout</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.support.v4.content.ContextCompat</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.support.v7.app.AppCompatActivity</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.os.Bundle</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.view.View</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.widget.Button</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.widget.TextView</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.view.MotionEvent</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.view.GestureDetector</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.support.v4.view.GestureDetectorCompat</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s0">public class </span><span class="s1">MainActivity </span><span class="s0">extends </span><span class="s1">AppCompatActivity </span><span class="s0">implements </span><span class="s1">GestureDetector.OnGestureListener</span><span class="s0">,</span><span class="s1"> 
+        GestureDetector.OnDoubleTapListener { 
+    </span><span class="s0">private </span><span class="s1">TextView ts</span><span class="s0">,</span><span class="s1">tt</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">GestureDetectorCompat gd</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">CountDownTimer cd</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">static int </span><span class="s1">count=</span><span class="s2">0</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">ConstraintLayout cl</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">StringBuilder sb</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private int </span><span class="s1">control=</span><span class="s2">0</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b1</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b2</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b3</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b4</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b5</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b6</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b7</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b8</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b9</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b10</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b11</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b12</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b13</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b14</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b15</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b16</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b17</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b18</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b19</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b20</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b21</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b22</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b23</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b24</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b25</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button b26</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Button bdel</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private int </span><span class="s1">i</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">TextView score</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">final </span><span class="s1">String arr[]={</span><span class="s3">&quot;abcdefghijklmnopqrstwxyz&quot;</span><span class="s0">,</span><span class="s3">&quot;zyxwvutsrqponmlkjihgfedcba&quot;</span><span class="s0">,</span><span class="s3">&quot;abcdefghijklmnopqrstuvwyxz&quot;</span><span class="s0">,</span><span class="s3">&quot;zxywvutsrqponmlkjihgfedcba&quot;</span><span class="s0">,</span><span class="s3">&quot;abcdefghijklqrstmnopuvwxzy&quot;</span><span class="s0">,</span><span class="s3">&quot;yzxwvuponmtsrqlkjihgfedcba&quot;</span><span class="s0">,</span><span class="s1"> 
+            </span><span class="s3">&quot;abcdefghijklmnopqrstwxyz&quot;</span><span class="s0">,</span><span class="s3">&quot;zyxwvutsrqponmlkjihgfedcba&quot;</span><span class="s0">,</span><span class="s3">&quot;abcdefghijklmnopqrstuvwyxz&quot;</span><span class="s0">,</span><span class="s3">&quot;zxywvutsrqponmlkjihgfedcba&quot;</span><span class="s1">}</span><span class="s0">;</span><span class="s1"> 
+    </span><span class="s0">final </span><span class="s1">String str[]={</span><span class="s3">&quot;aristotle&quot;</span><span class="s0">,</span><span class="s3">&quot;buffallo&quot;</span><span class="s0">,</span><span class="s3">&quot;bazinga&quot;</span><span class="s0">,</span><span class="s3">&quot;dogs&quot;</span><span class="s0">,</span><span class="s3">&quot;cats&quot;</span><span class="s0">,</span><span class="s3">&quot;rudra&quot;</span><span class="s0">,</span><span class="s3">&quot;ricky&quot;</span><span class="s0">,</span><span class="s3">&quot;matt&quot;</span><span class="s0">,</span><span class="s3">&quot;anubhav&quot;</span><span class="s0">,</span><span class="s3">&quot;holymoly&quot;</span><span class="s1">}</span><span class="s0">;</span><span class="s1"> 
+    @Override 
+    </span><span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState) { 
+        </span><span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span><span class="s0">;</span><span class="s1"> 
+        setContentView(R.layout.activity_main)</span><span class="s0">;</span><span class="s1"> 
+        tt=findViewById(R.id.tt)</span><span class="s0">;</span><span class="s1"> 
+        score=findViewById(R.id.score)</span><span class="s0">;</span><span class="s1"> 
+        sb=</span><span class="s0">new </span><span class="s1">StringBuilder()</span><span class="s0">;</span><span class="s1"> 
+        cd=</span><span class="s0">new </span><span class="s1">CountDownTimer(</span><span class="s2">30000</span><span class="s0">,</span><span class="s2">1000</span><span class="s1">) { 
+            @Override 
+            </span><span class="s0">public void </span><span class="s1">onTick(</span><span class="s0">long </span><span class="s1">l) { 
+                tt.setText(Integer.toString((</span><span class="s0">int</span><span class="s1">)l/</span><span class="s2">1000</span><span class="s1">))</span><span class="s0">;</span><span class="s1"> 
+            } 
+ 
+            @Override 
+            </span><span class="s0">public void </span><span class="s1">onFinish() { 
+                cl=findViewById(R.id.cl)</span><span class="s0">;</span><span class="s1"> 
+                Drawable d= ContextCompat.getDrawable(getApplicationContext()</span><span class="s0">,</span><span class="s1">R.drawable.score)</span><span class="s0">;</span><span class="s1"> 
+                cl.setBackground(d)</span><span class="s0">;</span><span class="s1"> 
+                TextView lost=findViewById(R.id.lost)</span><span class="s0">;</span><span class="s1"> 
+                lost.setText(</span><span class="s3">&quot;You Score: &quot;</span><span class="s1">+count)</span><span class="s0">;</span><span class="s1"> 
+                tt.setText(</span><span class="s3">&quot;&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+                ts.setText(</span><span class="s3">&quot;&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+                score.setText(</span><span class="s3">&quot;&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+                TextView wword=findViewById(R.id.wword)</span><span class="s0">;</span><span class="s1"> 
+                TextView gword=findViewById(R.id.gword)</span><span class="s0">;</span><span class="s1"> 
+                gword.setText(</span><span class="s3">&quot;&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+                wword.setText(</span><span class="s3">&quot;&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+                control=-</span><span class="s2">1</span><span class="s0">;</span><span class="s1"> 
+            } 
+        }</span><span class="s0">;</span><span class="s1"> 
+        ts=findViewById(R.id.ts)</span><span class="s0">;</span><span class="s1"> 
+        b1=findViewById(R.id.button15)</span><span class="s0">;</span><span class="s1"> 
+        b2=findViewById(R.id.button16)</span><span class="s0">;</span><span class="s1"> 
+        b3=findViewById(R.id.button17)</span><span class="s0">;</span><span class="s1"> 
+        b4=findViewById(R.id.button18)</span><span class="s0">;</span><span class="s1"> 
+        b5=findViewById(R.id.button19)</span><span class="s0">;</span><span class="s1"> 
+        b6=findViewById(R.id.button20)</span><span class="s0">;</span><span class="s1"> 
+        b7=findViewById(R.id.button21)</span><span class="s0">;</span><span class="s1"> 
+        b8=findViewById(R.id.button22)</span><span class="s0">;</span><span class="s1"> 
+        b9=findViewById(R.id.button23)</span><span class="s0">;</span><span class="s1"> 
+        b10=findViewById(R.id.button24)</span><span class="s0">;</span><span class="s1"> 
+        b11=findViewById(R.id.button25)</span><span class="s0">;</span><span class="s1"> 
+        b12=findViewById(R.id.button26)</span><span class="s0">;</span><span class="s1"> 
+        b13=findViewById(R.id.button27)</span><span class="s0">;</span><span class="s1"> 
+        b14=findViewById(R.id.button28)</span><span class="s0">;</span><span class="s1"> 
+        b15=findViewById(R.id.button29)</span><span class="s0">;</span><span class="s1"> 
+        b16=findViewById(R.id.button30)</span><span class="s0">;</span><span class="s1"> 
+        b17=findViewById(R.id.button31)</span><span class="s0">;</span><span class="s1"> 
+        b18=findViewById(R.id.button32)</span><span class="s0">;</span><span class="s1"> 
+        b19=findViewById(R.id.button33)</span><span class="s0">;</span><span class="s1"> 
+        b20=findViewById(R.id.button34)</span><span class="s0">;</span><span class="s1"> 
+        b21=findViewById(R.id.button35)</span><span class="s0">;</span><span class="s1"> 
+        b22=findViewById(R.id.button36)</span><span class="s0">;</span><span class="s1"> 
+        b23=findViewById(R.id.button37)</span><span class="s0">;</span><span class="s1"> 
+        b24=findViewById(R.id.button38)</span><span class="s0">;</span><span class="s1"> 
+        b25=findViewById(R.id.button39)</span><span class="s0">;</span><span class="s1"> 
+        b26=findViewById(R.id.button40)</span><span class="s0">;</span><span class="s1"> 
+        bdel=findViewById(R.id.button41)</span><span class="s0">;</span><span class="s1"> 
+ 
+        </span><span class="s0">this</span><span class="s1">.gd=</span><span class="s0">new </span><span class="s1">GestureDetectorCompat(</span><span class="s0">this,this</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public boolean </span><span class="s1">onSingleTapConfirmed(MotionEvent motionEvent) { 
+        </span><span class="s0">return false;</span><span class="s1"> 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public boolean </span><span class="s1">onDoubleTap(MotionEvent motionEvent) { 
+        </span><span class="s0">return false;</span><span class="s1"> 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public boolean </span><span class="s1">onDoubleTapEvent(MotionEvent motionEvent) { 
+        </span><span class="s0">return false;</span><span class="s1"> 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public boolean </span><span class="s1">onDown(MotionEvent motionEvent) { 
+        </span><span class="s0">return false;</span><span class="s1"> 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public void </span><span class="s1">onShowPress(MotionEvent motionEvent) { 
+ 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public boolean </span><span class="s1">onSingleTapUp(MotionEvent motionEvent) { 
+        </span><span class="s0">return false;</span><span class="s1"> 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public boolean </span><span class="s1">onScroll(MotionEvent motionEvent</span><span class="s0">, </span><span class="s1">MotionEvent motionEvent1</span><span class="s0">, float </span><span class="s1">v</span><span class="s0">, float </span><span class="s1">v1) { 
+        </span><span class="s0">return false;</span><span class="s1"> 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public void </span><span class="s1">onLongPress(MotionEvent motionEvent) { 
+ 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public boolean </span><span class="s1">onFling(MotionEvent motionEvent</span><span class="s0">, </span><span class="s1">MotionEvent motionEvent1</span><span class="s0">, float </span><span class="s1">v</span><span class="s0">, float </span><span class="s1">v1) { 
+        cl=findViewById(R.id.cl)</span><span class="s0">;</span><span class="s1"> 
+        ts.setText(</span><span class="s3">&quot;Your Score&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        Drawable d= ContextCompat.getDrawable(getApplicationContext()</span><span class="s0">,</span><span class="s1">R.drawable.bc)</span><span class="s0">;</span><span class="s1"> 
+        cl.setBackground(d)</span><span class="s0">;</span><span class="s1"> 
+        count=</span><span class="s2">0</span><span class="s0">;</span><span class="s1"> 
+        i=</span><span class="s2">0</span><span class="s0">;</span><span class="s1"> 
+        cd.start()</span><span class="s0">;</span><span class="s1"> 
+        hola()</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">return true;</span><span class="s1"> 
+    } 
+    </span><span class="s0">public boolean </span><span class="s1">onTouchEvent(MotionEvent event) { 
+        </span><span class="s0">this</span><span class="s1">.gd.onTouchEvent(event)</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">return super</span><span class="s1">.onTouchEvent(event)</span><span class="s0">;</span><span class="s1"> 
+    } 
+    </span><span class="s0">public void </span><span class="s1">check(String s1</span><span class="s0">,</span><span class="s1">String s2){ 
+        </span><span class="s0">if</span><span class="s1">(s1.length()==s2.length()&amp;&amp;s1.equals(s2)) { 
+            count++</span><span class="s0">;</span><span class="s1"> 
+            score.setText(Integer.toString(count))</span><span class="s0">;</span><span class="s1"> 
+ 
+            i++</span><span class="s0">;</span><span class="s1"> 
+            </span><span class="s0">char </span><span class="s1">c[]=arr[i].toCharArray()</span><span class="s0">;</span><span class="s1"> 
+            b1.setText(Character.toString(c[</span><span class="s2">0</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b2.setText(Character.toString(c[</span><span class="s2">1</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b3.setText(Character.toString(c[</span><span class="s2">2</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b4.setText(Character.toString(c[</span><span class="s2">3</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b5.setText(Character.toString(c[</span><span class="s2">4</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b6.setText(Character.toString(c[</span><span class="s2">5</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b7.setText(Character.toString(c[</span><span class="s2">6</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b8.setText(Character.toString(c[</span><span class="s2">7</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b9.setText(Character.toString(c[</span><span class="s2">8</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b10.setText(Character.toString(c[</span><span class="s2">9</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b11.setText(Character.toString(c[</span><span class="s2">10</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b12.setText(Character.toString(c[</span><span class="s2">11</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b13.setText(Character.toString(c[</span><span class="s2">12</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b14.setText(Character.toString(c[</span><span class="s2">13</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b15.setText(Character.toString(c[</span><span class="s2">14</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b16.setText(Character.toString(c[</span><span class="s2">15</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b17.setText(Character.toString(c[</span><span class="s2">16</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b18.setText(Character.toString(c[</span><span class="s2">17</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b19.setText(Character.toString(c[</span><span class="s2">18</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b20.setText(Character.toString(c[</span><span class="s2">19</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b21.setText(Character.toString(c[</span><span class="s2">20</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b22.setText(Character.toString(c[</span><span class="s2">21</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b23.setText(Character.toString(c[</span><span class="s2">22</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b24.setText(Character.toString(c[</span><span class="s2">23</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b25.setText(Character.toString(c[</span><span class="s2">24</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            b26.setText(Character.toString(c[</span><span class="s2">25</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+            hola()</span><span class="s0">;</span><span class="s1"> 
+        } 
+    } 
+    </span><span class="s0">public void </span><span class="s1">hola(){ 
+        TextView gword=findViewById(R.id.gword)</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">final </span><span class="s1">TextView wword=findViewById(R.id.wword)</span><span class="s0">;</span><span class="s1"> 
+        </span><span class="s0">if</span><span class="s1">(sb.length()&gt;=</span><span class="s2">1</span><span class="s1">){ 
+        sb.delete(</span><span class="s2">0</span><span class="s0">,</span><span class="s1">sb.length())</span><span class="s0">;</span><span class="s1"> 
+        wword.setText(sb)</span><span class="s0">;</span><span class="s1">} 
+        </span><span class="s4">//while(i&lt;10) {</span><span class="s1"> 
+            gword.setText(str[i])</span><span class="s0">;</span><span class="s1"> 
+            b1.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b1.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">, </span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b2.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b2.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">, </span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b3.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b3.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">, </span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b4.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b4.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">, </span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b5.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b5.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">, </span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b6.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b6.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">, </span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b7.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b7.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">, </span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b8.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b8.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">, </span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b9.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b9.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">, </span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b10.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b10.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">,</span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b11.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b11.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">, </span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b12.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b12.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">,</span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b13.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b13.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">, </span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b14.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b14.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">, </span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b15.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b15.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">, </span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b16.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b16.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">, </span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b17.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b17.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">, </span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b18.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b18.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">,</span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b19.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b19.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">, </span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b20.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b20.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">, </span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b21.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b21.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">, </span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+ 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b22.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b22.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">, </span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+ 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b23.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b23.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">, </span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+ 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b24.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b24.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">, </span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+ 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b25.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b25.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">, </span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+ 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            b26.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.append(b26.getText().toString()))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">, </span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+ 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+            bdel.setOnClickListener( 
+                    </span><span class="s0">new </span><span class="s1">Button.OnClickListener() { 
+                        @Override 
+                        </span><span class="s0">public void </span><span class="s1">onClick(View view) { 
+                            wword.setText(sb.deleteCharAt(sb.length() - </span><span class="s2">1</span><span class="s1">))</span><span class="s0">;</span><span class="s1"> 
+                            check(sb.toString()</span><span class="s0">, </span><span class="s1">str[i])</span><span class="s0">;</span><span class="s1"> 
+ 
+                        } 
+                    } 
+            )</span><span class="s0">;</span><span class="s1"> 
+        } 
+   </span><span class="s4">// }</span><span class="s1"> 
+} 
+</span></pre>
+</body>
+</html>
