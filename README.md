@@ -18,3 +18,7 @@ You have to get max number of words right while the count down timer counts from
 Proper way to generate actual words.
 Proper way to have a keyboard with random orientation
 Doesnt work on every device as of now
+
+
+
+Screenshots : https://github.com/phantom-5/SpellEm/wiki
